@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_11_27_061852) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_menus", force: :cascade do |t|
     t.bigint "active_menu"
     t.datetime "created_at", precision: 6, null: false
@@ -49,6 +52,15 @@ ActiveRecord::Schema.define(version: 2021_11_27_061852) do
     t.string "order_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.text "todo_text"
+    t.date "due_date"
+    t.boolean "completed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
   end
 
   create_table "users", force: :cascade do |t|
