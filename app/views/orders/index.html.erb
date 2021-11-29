@@ -15,12 +15,6 @@
 <h1 class='heading'>Order Here :  </h1>
 
 
-
-
-<%= render partial: "user-menu-table",
-           locals: { menu_data: MenuItem.menu_by_id(ActiveMenu.first.active_menu) } %>
-
-
 <h3 class='form-label-header'>Your Cart: </h3>
 
 <% if Order.find(session[:current_order_id]).order_items != [] %>
