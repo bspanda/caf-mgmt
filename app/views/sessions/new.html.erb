@@ -1,0 +1,13 @@
+<h1 class="heading">
+ New User Log In
+</h1>
+
+<%= form_with url: sessions_path, class: "form-container flex-down" do |form| %>
+
+    <p class='label'>Email: </p>
+    <%= form.email_field :email, class: "form-field" %>
+
+    <p class='label'>Password:</p>
+    <%= form.password_field :password, class: "form-field" %>
+    <%= form.submit "Login", class: "form-field" %>
+<% end %>
